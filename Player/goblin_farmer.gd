@@ -13,7 +13,6 @@ func _physics_process(delta: float) -> void:
 	if input_dir.length() > 0:
 		holdTimer += delta
 		holdTimer = clamp(holdTimer, 0, 0.4)
-		print(holdTimer)
 		if moving || holdTimer < 0.2:
 			return
 		else:
@@ -27,9 +26,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		holdTimer -= delta
 		holdTimer = clamp(holdTimer, 0, 0.4)
-		last_input = input_dir
 		if !moving:
-			$AnimationTree.set("parameters/blend_position", last_input)
+			print(delta)
+			print(last_input)
+			$AnimationTree.set("parameters/blend_position", Vector2(0,0))
+			$AnimationTree.set("parameters/4/blend_position", last_input)
 		
 
 func _move(input_dir):
