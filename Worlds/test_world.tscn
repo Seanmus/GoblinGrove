@@ -22,7 +22,7 @@ sources/0 = SubResource("TileSetAtlasSource_vn3tm")
 
 [node name="GoblinFarmer" parent="." unique_id=301776802 instance=ExtResource("1_3xrbq")]
 z_index = 1000
-position = Vector2(545, 382)
+position = Vector2(328, 376)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1354476099]
 position = Vector2(444, 276)
