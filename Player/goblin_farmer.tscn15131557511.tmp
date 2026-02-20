@@ -90,7 +90,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_spry5"]
-resource_name = "idle_down"
+resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -104,51 +104,6 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_353ia"]
-resource_name = "idle_left"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
-}
-
-[sub_resource type="Animation" id="Animation_eivs1"]
-resource_name = "idle_right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-
-[sub_resource type="Animation" id="Animation_8n7w7"]
-resource_name = "idle_up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w7jbw"]
 _data = {
 &"Down": SubResource("Animation_rabws"),
@@ -156,10 +111,7 @@ _data = {
 &"RESET": SubResource("Animation_cbpdx"),
 &"Right": SubResource("Animation_cl37e"),
 &"Up": SubResource("Animation_t4f7b"),
-&"idle_down": SubResource("Animation_spry5"),
-&"idle_left": SubResource("Animation_353ia"),
-&"idle_right": SubResource("Animation_eivs1"),
-&"idle_up": SubResource("Animation_8n7w7")
+&"idle": SubResource("Animation_spry5")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rabws"]
@@ -174,8 +126,8 @@ animation = &"Left"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cl37e"]
 animation = &"Right"
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rabws"]
-graph_offset = Vector2(87, -117)
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t4f7b"]
+animation = &"idle"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_t4f7b"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_rabws")
@@ -186,7 +138,7 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_w7jbw")
 blend_point_2/pos = Vector2(-1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_cl37e")
 blend_point_3/pos = Vector2(1, 0)
-blend_point_4/node = SubResource("AnimationNodeStateMachine_rabws")
+blend_point_4/node = SubResource("AnimationNodeAnimation_t4f7b")
 blend_point_4/pos = Vector2(0, 0)
 blend_mode = 1
 

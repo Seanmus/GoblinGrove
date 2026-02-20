@@ -4,13 +4,17 @@ var animation_speed = 3
 var moving = false
 var tile_size = 16
 var last_input
+var holdTimer = 0
 @export var ray: RayCast2D
 
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
-	if(input_dir.length() > 0):
-		if moving:
+	if input_dir.length() > 0:
+		holdTimer += delta
+		holdTimer = clamp(holdTimer, 0, 0.4)
+		print(holdTimer)
+		if moving || holdTimer < 0.2:
 			return
 		else:
 			last_input = input_dir
@@ -21,6 +25,8 @@ func _physics_process(delta: float) -> void:
 				_move(Vector2(0, input_dir.y).normalized())
 
 	else:
+		holdTimer -= delta
+		holdTimer = clamp(holdTimer, 0, 0.4)
 		last_input = input_dir
 		if !moving:
 			$AnimationTree.set("parameters/blend_position", last_input)
