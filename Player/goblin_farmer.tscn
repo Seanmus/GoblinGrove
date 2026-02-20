@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://bcjuf1k0fk8yw"]
+
+[ext_resource type="Script" uid="uid://b15w321i0q1q5" path="res://Player/goblin_farmer.gd" id="1_lsnek"]
+[ext_resource type="Texture2D" uid="uid://4f4x2irl1gex" path="res://Sprites/GoblinBase-Sheet.png" id="1_wmk15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnek"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_rabws"]
+resource_name = "Down"
+length = 0.80000335
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.40000004, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_w7jbw"]
+resource_name = "Left"
+length = 0.40000334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_cbpdx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cl37e"]
+resource_name = "Right"
+length = 0.40000334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_t4f7b"]
+resource_name = "Up"
+length = 0.80000335
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.40000004, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_spry5"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w7jbw"]
+_data = {
+&"Down": SubResource("Animation_rabws"),
+&"Left": SubResource("Animation_w7jbw"),
+&"RESET": SubResource("Animation_cbpdx"),
+&"Right": SubResource("Animation_cl37e"),
+&"Up": SubResource("Animation_t4f7b"),
+&"idle": SubResource("Animation_spry5")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rabws"]
+animation = &"Down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cbpdx"]
+animation = &"Up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w7jbw"]
+animation = &"Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cl37e"]
+animation = &"Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t4f7b"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_t4f7b"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_rabws")
+blend_point_0/pos = Vector2(0, 0.90000004)
+blend_point_1/node = SubResource("AnimationNodeAnimation_cbpdx")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_w7jbw")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_cl37e")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_t4f7b")
+blend_point_4/pos = Vector2(0, 0)
+blend_mode = 1
+
+[node name="GoblinFarmer" type="CharacterBody2D" unique_id=301776802]
+motion_mode = 1
+script = ExtResource("1_lsnek")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=38963677]
+shape = SubResource("RectangleShape2D_lsnek")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1096661634]
+texture_filter = 1
+texture = ExtResource("1_wmk15")
+hframes = 12
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1801533089]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=446565257]
+libraries/ = SubResource("AnimationLibrary_w7jbw")
+autoplay = &"Down"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=863030872]
+tree_root = SubResource("AnimationNodeBlendSpace2D_t4f7b")
+anim_player = NodePath("../AnimationPlayer")
+parameters/blend_position = 0.0
