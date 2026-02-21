@@ -3,20 +3,21 @@ extends CharacterBody2D
 var animation_speed = 3
 var moving = false
 var tile_size = 16
-var last_input
+var last_input = Vector2(0,0)
 var holdTimer = 0
 @export var ray: RayCast2D
+@export var soilLayer : TileMapLayer
 
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	if input_dir.length() > 0:
 		holdTimer += delta
-		holdTimer = clamp(holdTimer, 0, 0.4)
-		if moving || holdTimer < 0.2:
+		holdTimer = clamp(holdTimer, 0, 0.45)
+		last_input = input_dir.normalized()
+		if moving || holdTimer < 0.32:
 			return
-		else:
-			last_input = input_dir
+		else:			
 			$AnimationTree.set("parameters/blend_position", last_input)
 			if(abs(input_dir.x) > abs(input_dir.y)):
 				_move(Vector2(input_dir.x, 0).normalized())
@@ -24,11 +25,14 @@ func _physics_process(delta: float) -> void:
 				_move(Vector2(0, input_dir.y).normalized())
 
 	else:
-		holdTimer -= delta
-		holdTimer = clamp(holdTimer, 0, 0.4)
+		holdTimer = 0
 		if !moving:
-			print(delta)
-			print(last_input)
+			var tile_pos = soilLayer.local_to_map(Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16))
+			var tileType = soilLayer.get_cell_atlas_coords(tile_pos)
+			#waters the soil
+			if tileType == Vector2i(0,2) && Input.is_action_just_pressed("click"):
+				soilLayer.set_cell(tile_pos, 0, Vector2(1,2))
+				print(soilLayer.get_cell_source_id(tile_pos))
 			$AnimationTree.set("parameters/blend_position", Vector2(0,0))
 			$AnimationTree.set("parameters/4/blend_position", last_input)
 		

@@ -232,7 +232,7 @@ autoplay = &"Down"
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=863030872]
 tree_root = SubResource("AnimationNodeBlendSpace2D_t4f7b")
 anim_player = NodePath("../AnimationPlayer")
-parameters/blend_position = 0.0
+parameters/blend_position = Vector2(0, 0)
 parameters/4/blend_position = Vector2(0, 0)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=78927974]
