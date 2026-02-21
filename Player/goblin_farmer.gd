@@ -31,10 +31,12 @@ func _physics_process(delta: float) -> void:
 			var tileType = soilLayer.get_cell_atlas_coords(tile_pos)
 			#waters the soil
 			if tileType == Vector2i(0,2) && Input.is_action_just_pressed("click"):
-				FarmController._WaterTile(soilLayer, tile_pos)
+				soilLayer._WaterTile(tile_pos)
 			$AnimationTree.set("parameters/blend_position", Vector2(0,0))
 			$AnimationTree.set("parameters/4/blend_position", last_input)
-		
+			if (tileType == Vector2i(0,2) || tileType == Vector2i(1,2)) and Input.is_action_just_pressed("Plant"):
+				print("planting")
+				soilLayer._Plant(1, Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16), 1, tile_pos)
 
 func _move(input_dir):
 	ray.target_position = input_dir * tile_size

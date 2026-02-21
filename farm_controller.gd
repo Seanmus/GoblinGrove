@@ -1,6 +1,13 @@
 extends Node
 
+var tileMap
 var farmland = {}
+var hour = 6
+var minute = 0
+var days = 0
+var timer = 0
+
+signal newDay
 # Called when the node enters the scene tree for the first time.
 
 class FarmData:
@@ -13,13 +20,21 @@ class FarmData:
 		plant = _plant
 		stage = _stage
 
-func _WaterTile(soilLayer, tile_pos):
-	soilLayer.set_cell(tile_pos, 0, Vector2(1,2))
-	farmland[tile_pos].watered = true
-		
-
+func _process(delta: float) -> void:
+	timer += delta
+	if timer >= 0.01:
+		timer -= 0.01
+		minute += 1
+	if minute >= 60:
+		hour += 1
+		minute = 0
+	if hour >= 24:
+		hour = 0
+		days += 1
+		newDay.emit()
 
 func _SetupFarmLand(soilLayer):
+	tileMap = soilLayer
 	var tiles = soilLayer.get_used_cells()
 	for tile in tiles:
 		var tileType = soilLayer.get_cell_atlas_coords(tile)

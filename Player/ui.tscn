@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://1lmmfnu7qpb8"]
+
+[ext_resource type="Texture2D" uid="uid://kankf1f4y8d3" path="res://Sprites/UI/UIPanel.png" id="1_4qruw"]
+
+[node name="UI" type="Control" unique_id=1266340268]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UiPanel" type="Sprite2D" parent="." unique_id=1070232188]
+texture_filter = 1
+position = Vector2(21, 128)
+texture = ExtResource("1_4qruw")

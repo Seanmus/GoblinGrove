@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b15w321i0q1q5" path="res://Player/goblin_farmer.gd" id="1_lsnek"]
 [ext_resource type="Texture2D" uid="uid://4f4x2irl1gex" path="res://Sprites/GoblinBase-Sheet.png" id="1_wmk15"]
+[ext_resource type="Texture2D" uid="uid://kankf1f4y8d3" path="res://Sprites/UI/UIPanel.png" id="3_cbpdx"]
+[ext_resource type="Texture2D" uid="uid://c7nxarwv5hpp0" path="res://Sprites/UI/vinegar_can.png" id="4_t4f7b"]
+[ext_resource type="Texture2D" uid="uid://gmumn8lhb4vk" path="res://Sprites/UI/hoe.png" id="5_spry5"]
+[ext_resource type="Texture2D" uid="uid://yr32xn24xadi" path="res://Sprites/UI/Onion.png" id="6_353ia"]
+[ext_resource type="Texture2D" uid="uid://b2gmub6t6j2xt" path="res://Sprites/UI/TimeIndicator.png" id="7_353ia"]
+[ext_resource type="Texture2D" uid="uid://ctj722tsr6e0t" path="res://Sprites/UI/TimeDial.png" id="7_spry5"]
+[ext_resource type="Script" uid="uid://bl7mce6tf7jjk" path="res://Player/indicator.gd" id="8_eivs1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnek"]
 size = Vector2(16, 16)
@@ -238,3 +245,126 @@ parameters/4/blend_position = Vector2(0, 0)
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=78927974]
 
 [node name="Timer" type="Timer" parent="." unique_id=1468372942]
+
+[node name="UI" type="Control" parent="." unique_id=1540114707]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 80.0
+offset_bottom = 72.0
+
+[node name="ItemBar" type="HBoxContainer" parent="UI" unique_id=590021419]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7777778
+anchor_right = 1.0
+anchor_bottom = 0.8680556
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemBox" type="TextureRect" parent="UI/ItemBar" unique_id=955241939]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_cbpdx")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/ItemBar/ItemBox" unique_id=509817778]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("4_t4f7b")
+
+[node name="ItemBox2" type="TextureRect" parent="UI/ItemBar" unique_id=1707337660]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_cbpdx")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/ItemBar/ItemBox2" unique_id=1052100986]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("5_spry5")
+
+[node name="ItemBox3" type="TextureRect" parent="UI/ItemBar" unique_id=868514455]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_cbpdx")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/ItemBar/ItemBox3" unique_id=1416836283]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("6_353ia")
+
+[node name="ItemBox4" type="TextureRect" parent="UI/ItemBar" unique_id=602391593]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_cbpdx")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/ItemBar/ItemBox4" unique_id=134525782]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="ItemBox5" type="TextureRect" parent="UI/ItemBar" unique_id=342908386]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_cbpdx")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/ItemBar/ItemBox5" unique_id=847624871]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Indicator" type="TextureRect" parent="UI" unique_id=628717857 node_paths=PackedStringArray("time_label")]
+z_index = -1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.0
+offset_right = -1.0
+offset_bottom = 48.0
+grow_horizontal = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_353ia")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("8_eivs1")
+time_label = NodePath("../Indicator2/Label")
+
+[node name="Indicator2" type="TextureRect" parent="UI" unique_id=2027218311]
+z_index = -1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_bottom = 48.0
+grow_horizontal = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_spry5")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="UI/Indicator2" unique_id=193715228]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21875
+anchor_top = 0.5
+anchor_right = 0.78125
+anchor_bottom = 0.71875
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "11:10 AM"
+metadata/_edit_use_anchors_ = true
