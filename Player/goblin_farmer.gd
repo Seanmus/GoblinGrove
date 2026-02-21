@@ -31,8 +31,7 @@ func _physics_process(delta: float) -> void:
 			var tileType = soilLayer.get_cell_atlas_coords(tile_pos)
 			#waters the soil
 			if tileType == Vector2i(0,2) && Input.is_action_just_pressed("click"):
-				soilLayer.set_cell(tile_pos, 0, Vector2(1,2))
-				print(soilLayer.get_cell_source_id(tile_pos))
+				FarmController._WaterTile(soilLayer, tile_pos)
 			$AnimationTree.set("parameters/blend_position", Vector2(0,0))
 			$AnimationTree.set("parameters/4/blend_position", last_input)
 		
