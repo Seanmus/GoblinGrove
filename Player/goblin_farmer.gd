@@ -13,6 +13,8 @@ var itemSelected = 1
 
 func _physics_process(delta: float) -> void:
 	_SelectedItem()
+	if Input.is_action_just_pressed("k"):
+		Inventory._addItem(1)
 	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	if input_dir.length() > 0:
 		holdTimer += delta

@@ -1,6 +1,6 @@
 extends TileMapLayer
 
-const onion = preload("res://Player/onion.tscn")
+const onionPlant = preload("res://Player/onion.tscn")
 @onready var plantParent = $PlantParent
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +10,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug"):
 		_LoadFarmland()
-	if Input.is_action_just_pressed("debug2"):
-		_Debug()
+	if Input.is_action_just_pressed("k"):
+		pass
+		#_Debug()
 		
 func _Debug():
 	_NewDay()
@@ -47,9 +48,10 @@ func _Plant(plantType, tile_pos, stage, farm_pos):
 	farmland.plant = plantType
 	farmland.stage = stage
 	print("adding onion")
-	var newOnion = onion.instantiate()
+	var newOnion = onionPlant.instantiate()
 	plantParent.add_child(newOnion)
 	newOnion.position = tile_pos
+	print(newOnion)
 	newOnion._set_stage(stage)
 	
 func _NewDay():

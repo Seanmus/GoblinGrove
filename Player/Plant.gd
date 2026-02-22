@@ -1,12 +1,11 @@
-extends Node
+extends Node2D
 class_name Plant
 
+var itemId
 var maxState = 5
 var tilePos = 1
 var stage = 1
 
-func _ready() -> void:
-	_set_sprite_for_stage(stage)
 
 func _set_stage(Stage):
 	stage = Stage
