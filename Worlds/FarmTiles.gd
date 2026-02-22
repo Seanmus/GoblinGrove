@@ -36,7 +36,7 @@ func _WaterTile(tile_pos):
 
 func _CanPlantTile(farm_pos):
 	var farmland = FarmController.farmland[farm_pos]
-	if farmland.plant == 0:
+	if farmland.plantIndex == 0:
 		print("can plant")
 		return true
 	else:
@@ -45,14 +45,30 @@ func _CanPlantTile(farm_pos):
 
 func _Plant(plantType, tile_pos, stage, farm_pos):
 	var farmland = FarmController.farmland[farm_pos]
-	farmland.plant = plantType
+	farmland.plantIndex = plantType
 	farmland.stage = stage
-	print("adding onion")
-	var newOnion = onionPlant.instantiate()
-	plantParent.add_child(newOnion)
-	newOnion.position = tile_pos
-	print(newOnion)
-	newOnion._set_stage(stage)
+	print("adding plant")
+	var newPlant
+	if(plantType == 2):
+		newPlant = onionPlant.instantiate()
+	farmland.plantType = newPlant
+	plantParent.add_child(newPlant)
+	newPlant.position = tile_pos
+	print(newPlant)
+	newPlant._set_stage(stage)
+
+func _can_harvest(farm_pos):
+	if FarmController.farmland.has(farm_pos):
+		var farmland = FarmController.farmland[farm_pos]
+		if farmland.plantType != null:
+			if farmland.plantType._can_harvest():
+				farmland.stage = 0
+				farmland.plantType = null
+				farmland.plantIndex = 0
+				return true
+			else:
+				return false
+		return false
 	
 func _NewDay():
 	_DeleteAllPlants()
@@ -68,9 +84,9 @@ func _NewDay():
 				#Grow Plant
 					
 			set_cell(tile, 0, Vector2(0,2))
-			if(farmdata.plant != 0):
+			if(farmdata.plantIndex != 0):
 				print("regrowing")
-				_Plant(farmdata.plant, map_to_local(tile), farmdata.stage, tile)	
+				_Plant(farmdata.plantIndex, map_to_local(tile), farmdata.stage, tile)	
 
 func _DeleteAllPlants():
 	for child in plantParent.get_children():

@@ -14,8 +14,11 @@ func _set_stage(Stage):
 func _set_sprite_for_stage(stage):
 	return "hi"
 
-func _can_harvest(stage):
+func _can_harvest():
 	if stage >= maxState:
+		Inventory._addItem(itemId)
+		call_deferred("queue_free")
 		return true
+
 	else:
 		return false

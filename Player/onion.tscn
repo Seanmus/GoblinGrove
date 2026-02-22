@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmk4weknowwl4"]
 
 [ext_resource type="PackedScene" uid="uid://cfgf2qgy7adne" path="res://Player/plant.tscn" id="1_brh5l"]
-[ext_resource type="Script" uid="uid://g6hpeop2o4ep" path="res://Player/Onion.gd" id="2_h6uy5"]
+[ext_resource type="Script" path="res://Player/Onion.gd" id="2_h6uy5"]
 
 [node name="Onion" unique_id=1398079512 instance=ExtResource("1_brh5l")]
 script = ExtResource("2_h6uy5")

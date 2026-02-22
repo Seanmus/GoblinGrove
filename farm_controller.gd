@@ -12,20 +12,22 @@ signal newDay
 
 class FarmData:
 	var watered : bool
-	var plant : int
+	var plantIndex : int
 	var stage : int
+	var plantType : Plant
 	
-	func _init(_watered, _plant, _stage):
+	func _init(_watered, _plant, _stage, _plantType):
 		watered = _watered
-		plant = _plant
+		plantIndex = _plant
 		stage = _stage
+		plantType = _plantType
 
 func _process(delta: float) -> void:
 	timer += delta
 	if timer >= 0.01:
 		timer -= 0.01
 		minute += 1
-	if minute >= 60:
+	if minute >= 10:
 		hour += 1
 		minute = 0
 	if hour >= 24:
@@ -39,6 +41,6 @@ func _SetupFarmLand(soilLayer):
 	for tile in tiles:
 		var tileType = soilLayer.get_cell_atlas_coords(tile)
 		if tileType == Vector2i(0,2):
-			var newFarmLand = FarmData.new(false, 0, 0)
+			var newFarmLand = FarmData.new(false, 0, 0, null)
 			farmland.get_or_add(tile, newFarmLand)
 			

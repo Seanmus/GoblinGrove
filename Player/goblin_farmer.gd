@@ -39,6 +39,9 @@ func _physics_process(delta: float) -> void:
 func _UseItems():
 	var tile_pos = soilLayer.local_to_map(Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16))
 	var tileType = soilLayer.get_cell_atlas_coords(tile_pos)
+	if Input.is_action_just_pressed("click"):
+		if(soilLayer._can_harvest(tile_pos)):
+			return
 	if (tileType == Vector2i(0,2) || tileType == Vector2i(1,2)) && Input.is_action_just_pressed("click"):
 		if !Inventory.inventory.has(Inventory.selectedItem):
 			return
@@ -47,9 +50,9 @@ func _UseItems():
 		elif Inventory.inventory[Inventory.selectedItem].item.type == 0:
 			print("planting")
 			if soilLayer._CanPlantTile(tile_pos):
+				soilLayer._Plant(Inventory.inventory[Inventory.selectedItem].item.itemId, Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16), 1, tile_pos)
 				Inventory._useItem(Inventory.selectedItem)
-				soilLayer._Plant(1, Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16), 1, tile_pos)
-
+				
 func _SelectedItem():	
 	if Input.is_action_just_pressed("one"):
 		ui._HotBarHighlight(1)
