@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bcjuf1k0fk8yw" path="res://Player/goblin_farmer.tscn" id="1_3xrbq"]
 [ext_resource type="Texture2D" uid="uid://lcqp3iy8buu5" path="res://Sprites/GroundTileSet.png" id="3_jbqd0"]
 [ext_resource type="Script" uid="uid://dbcfema00k5tb" path="res://Worlds/FarmTiles.gd" id="3_vn3tm"]
+[ext_resource type="PackedScene" uid="uid://co5kbjdv5sa4q" path="res://shipping_container.tscn" id="4_vn3tm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vn3tm"]
 texture = ExtResource("3_jbqd0")
@@ -34,3 +35,6 @@ tile_set = SubResource("TileSet_7u6cd")
 script = ExtResource("3_vn3tm")
 
 [node name="PlantParent" type="Node2D" parent="GroundLayer" unique_id=307992857]
+
+[node name="ShippingContainer" parent="." unique_id=721419415 instance=ExtResource("4_vn3tm")]
+position = Vector2(472, 360)

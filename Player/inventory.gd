@@ -2,9 +2,10 @@ extends Node
 #initalize inventory with 5 seeds
 @onready var inventory = {1 : inventorySlot.new(Items.items[5], 1), 2 : inventorySlot.new(Items.items[2], 5)}
 
+
 signal inventoryUpdated
 var selectedItem = 1
-
+var money = 0
 
 class inventorySlot:
 	var item
