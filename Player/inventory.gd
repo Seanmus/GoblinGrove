@@ -1,6 +1,6 @@
 extends Node
 #initalize inventory with 5 seeds
-@onready var inventory = {1 : inventorySlot.new(Items.items[5], 1) }
+@onready var inventory = {1 : inventorySlot.new(Items.items[5], 1), 2 : inventorySlot.new(Items.items[2], 5)}
 
 signal inventoryUpdated
 
@@ -20,4 +20,11 @@ func _addItem(itemId):
 	#maybe start at 6?
 	print("adding item " + str(Items.items[itemId].description))
 	inventory.get_or_add(6, inventorySlot.new(Items.items[itemId], 1))
+	emit_signal("inventoryUpdated")
+
+func _useItem(itemSlot):
+	inventory[itemSlot].count -= 1
+	print(inventory[itemSlot].item)
+	if inventory[itemSlot].count <= 0:
+		inventory.erase(itemSlot)
 	emit_signal("inventoryUpdated")

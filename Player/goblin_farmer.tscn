@@ -289,6 +289,20 @@ offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("4_t4f7b")
 
+[node name="Label" type="Label" parent="UI/ItemBar/ItemBox/icon" unique_id=1682737285]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="ItemBox2" type="TextureRect" parent="UI/ItemBar" unique_id=1707337660]
 texture_filter = 1
 layout_mode = 2
@@ -302,6 +316,20 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_353ia")
+
+[node name="Label" type="Label" parent="UI/ItemBar/ItemBox2/icon" unique_id=2081075437]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemBox3" type="TextureRect" parent="UI/ItemBar" unique_id=868514455]
 texture_filter = 1
@@ -317,6 +345,20 @@ offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("5_spry5")
 
+[node name="Label" type="Label" parent="UI/ItemBar/ItemBox3/icon" unique_id=135602607]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="ItemBox4" type="TextureRect" parent="UI/ItemBar" unique_id=602391593]
 texture_filter = 1
 layout_mode = 2
@@ -330,6 +372,20 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 
+[node name="Label" type="Label" parent="UI/ItemBar/ItemBox4/icon" unique_id=2009161734]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="ItemBox5" type="TextureRect" parent="UI/ItemBar" unique_id=342908386]
 texture_filter = 1
 layout_mode = 2
@@ -342,6 +398,20 @@ slotNumber = 5
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+
+[node name="Label" type="Label" parent="UI/ItemBar/ItemBox5/icon" unique_id=1619665789]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Indicator" type="TextureRect" parent="UI" unique_id=628717857 node_paths=PackedStringArray("time_label")]
 z_index = -1
@@ -391,6 +461,7 @@ text = "11:10 AM"
 metadata/_edit_use_anchors_ = true
 
 [node name="Inventory" type="GridContainer" parent="UI" unique_id=798075580]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -449,6 +520,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI/Inventory/Slot7/icon" unique_id=2135190596]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot8" type="TextureButton" parent="UI/Inventory" unique_id=1938112909]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
@@ -463,6 +548,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Inventory/Slot8/icon" unique_id=788572054]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot9" type="TextureButton" parent="UI/Inventory" unique_id=426574995]
 layout_mode = 2
@@ -479,6 +578,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI/Inventory/Slot9/icon" unique_id=1941384172]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot10" type="TextureButton" parent="UI/Inventory" unique_id=457083401]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
@@ -493,6 +606,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Inventory/Slot10/icon" unique_id=2087098301]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot11" type="TextureButton" parent="UI/Inventory" unique_id=525123942]
 layout_mode = 2
@@ -509,6 +636,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI/Inventory/Slot11/icon" unique_id=29798232]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot12" type="TextureButton" parent="UI/Inventory" unique_id=534523444]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
@@ -523,6 +664,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Inventory/Slot12/icon" unique_id=1692681524]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot13" type="TextureButton" parent="UI/Inventory" unique_id=2098834586]
 layout_mode = 2
@@ -539,6 +694,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI/Inventory/Slot13/icon" unique_id=404932146]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot14" type="TextureButton" parent="UI/Inventory" unique_id=229475392]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
@@ -553,6 +722,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Inventory/Slot14/icon" unique_id=208566140]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot15" type="TextureButton" parent="UI/Inventory" unique_id=1914188512]
 layout_mode = 2
@@ -569,6 +752,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI/Inventory/Slot15/icon" unique_id=1066099683]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot16" type="TextureButton" parent="UI/Inventory" unique_id=1254253465]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
@@ -583,6 +780,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Inventory/Slot16/icon" unique_id=1825780783]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot17" type="TextureButton" parent="UI/Inventory" unique_id=307620433]
 layout_mode = 2
@@ -599,6 +810,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI/Inventory/Slot17/icon" unique_id=646768839]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot18" type="TextureButton" parent="UI/Inventory" unique_id=2021222793]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
@@ -613,6 +838,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Inventory/Slot18/icon" unique_id=1331798295]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot19" type="TextureButton" parent="UI/Inventory" unique_id=1385795717]
 layout_mode = 2
@@ -629,6 +868,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI/Inventory/Slot19/icon" unique_id=790595623]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot20" type="TextureButton" parent="UI/Inventory" unique_id=434466138]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
@@ -643,6 +896,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Inventory/Slot20/icon" unique_id=552279584]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot21" type="TextureButton" parent="UI/Inventory" unique_id=726969429]
 layout_mode = 2
@@ -659,6 +926,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI/Inventory/Slot21/icon" unique_id=1109324307]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot22" type="TextureButton" parent="UI/Inventory" unique_id=1120075420]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
@@ -674,6 +955,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI/Inventory/Slot22/icon" unique_id=1214781024]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Slot23" type="TextureButton" parent="UI/Inventory" unique_id=1297457411]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
@@ -688,3 +983,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Inventory/Slot23/icon" unique_id=135487422]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

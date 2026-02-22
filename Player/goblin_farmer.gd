@@ -32,21 +32,26 @@ func _physics_process(delta: float) -> void:
 	else:
 		holdTimer = 0
 		if !moving:
-			var tile_pos = soilLayer.local_to_map(Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16))
-			var tileType = soilLayer.get_cell_atlas_coords(tile_pos)
+			_UseItems()
 			#waters the soil
-			if (tileType == Vector2i(0,2) || tileType == Vector2i(1,2)) && Input.is_action_just_pressed("click"):
-				if itemSelected == 1:
-					soilLayer._WaterTile(tile_pos)
-				elif itemSelected == 2:
-					print("planting")
-					if soilLayer._CanPlantTile(tile_pos):
-						soilLayer._Plant(1, Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16), 1, tile_pos)
 			$AnimationTree.set("parameters/blend_position", Vector2(0,0))
 			$AnimationTree.set("parameters/4/blend_position", last_input)
 
-func _SelectedItem():
-	
+func _UseItems():
+	var tile_pos = soilLayer.local_to_map(Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16))
+	var tileType = soilLayer.get_cell_atlas_coords(tile_pos)
+	if (tileType == Vector2i(0,2) || tileType == Vector2i(1,2)) && Input.is_action_just_pressed("click"):
+		if !Inventory.inventory.has(itemSelected):
+			return
+		if Inventory.inventory[itemSelected].item.itemId == 5:
+			soilLayer._WaterTile(tile_pos)
+		elif Inventory.inventory[itemSelected].item.type == 0:
+			print("planting")
+			if soilLayer._CanPlantTile(tile_pos):
+				Inventory._useItem(itemSelected)
+				soilLayer._Plant(1, Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16), 1, tile_pos)
+
+func _SelectedItem():	
 	if Input.is_action_just_pressed("one"):
 		ui._HotBarHighlight(1)
 		itemSelected = 1

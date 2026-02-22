@@ -2,17 +2,21 @@ extends Control
 
 @export var slotNumber : int
 @onready var icon = $icon
+@onready var label = $icon/Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Inventory.inventoryUpdated.connect(_RefreshDisplay)
-	if(Inventory.inventory.has(slotNumber)):
-		print("hi")
-		icon.texture = Inventory.inventory[slotNumber].item.texture
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	_RefreshDisplay()
+		
 func _RefreshDisplay():
 	if(Inventory.inventory.has(slotNumber)):
-		icon.texture = Inventory.inventory[slotNumber].item.texture
-		print(str(Inventory.inventory[slotNumber].item.texture))
+		if Inventory.inventory[slotNumber].item.type != 1:
+			icon.texture = Inventory.inventory[slotNumber].item.texture
+			print(str(Inventory.inventory[slotNumber].item.texture))
+			label.text = str(Inventory.inventory[slotNumber].count)
+		else:
+			label.text = ""
+	else:
+		label.text = ""
+		icon.texture = null
