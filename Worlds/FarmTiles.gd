@@ -1,6 +1,7 @@
 extends TileMapLayer
 
 const onionPlant = preload("res://Player/onion.tscn")
+const herringPlant = preload("res://Player/herring.tscn")
 @onready var plantParent = $PlantParent
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,6 +52,8 @@ func _Plant(plantType, tile_pos, stage, farm_pos):
 	var newPlant
 	if(plantType == 2):
 		newPlant = onionPlant.instantiate()
+	if(plantType == 4):
+		newPlant = herringPlant.instantiate()
 	farmland.plantType = newPlant
 	plantParent.add_child(newPlant)
 	newPlant.position = tile_pos

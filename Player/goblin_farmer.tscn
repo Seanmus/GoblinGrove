@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://1r8c8l8ifuym" path="res://Player/inventorySlot.gd" id="12_s1k3g"]
 [ext_resource type="Texture2D" uid="uid://b51s3e725hgpx" path="res://Sprites/Inventory Description.png" id="13_yeau6"]
 [ext_resource type="Script" uid="uid://dp2ln8spqbvhx" path="res://Player/InventoryLabel.gd" id="14_q2a2v"]
+[ext_resource type="Texture2D" uid="uid://bymiydteigvpt" path="res://Sprites/UI/MoneyPanel.png" id="15_t74k3"]
+[ext_resource type="Script" uid="uid://cy20wl1hyh0vm" path="res://Player/money_label.gd" id="16_jdw1h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnek"]
 size = Vector2(16, 16)
@@ -1035,3 +1037,22 @@ Value:"
 vertical_alignment = 1
 script = ExtResource("14_q2a2v")
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=1722737762]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 16.0
+texture = ExtResource("15_t74k3")
+stretch_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="UI/TextureRect" unique_id=1189560143]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.05882353, 0.21960784, 0.05882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "G:9999"
+script = ExtResource("16_jdw1h")
+
+[node name="LookRaycast" type="RayCast2D" parent="." unique_id=1650949178]
+target_position = Vector2(0, 16)

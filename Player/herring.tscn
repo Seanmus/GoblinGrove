@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dimj1k57y8vwa"]
+
+[ext_resource type="PackedScene" uid="uid://cfgf2qgy7adne" path="res://Player/plant.tscn" id="1_0q8pv"]
+[ext_resource type="Script" uid="uid://cexe44tuof58j" path="res://Player/pickeledHerring.gd" id="2_qse3c"]
+
+[node name="Herring" unique_id=1398079512 instance=ExtResource("1_0q8pv")]
+script = ExtResource("2_qse3c")

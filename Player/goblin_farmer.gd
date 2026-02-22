@@ -19,6 +19,10 @@ func _physics_process(delta: float) -> void:
 		holdTimer += delta
 		holdTimer = clamp(holdTimer, 0, 0.45)
 		last_input = input_dir.normalized()
+		if(abs(input_dir.x) > abs(input_dir.y)):
+			$LookRaycast.target_position = Vector2(input_dir.x * 16, 0)
+		else:
+			$LookRaycast.target_position = Vector2(0, input_dir.y * 16)
 		if moving || holdTimer < 0.32:
 			return
 		else:			
@@ -42,6 +46,15 @@ func _UseItems():
 	if Input.is_action_just_pressed("click"):
 		if(soilLayer._can_harvest(tile_pos)):
 			return
+		if($LookRaycast.is_colliding()):
+			var detected = $LookRaycast.get_collider()
+			if detected is ShippingContainer:
+				if !Inventory.inventory.has(Inventory.selectedItem):
+					return
+				if Inventory.inventory[Inventory.selectedItem].item.type == 2:
+					Inventory._sellItem(Inventory.selectedItem)
+				
+				
 	if (tileType == Vector2i(0,2) || tileType == Vector2i(1,2)) && Input.is_action_just_pressed("click"):
 		if !Inventory.inventory.has(Inventory.selectedItem):
 			return
