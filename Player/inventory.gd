@@ -21,6 +21,11 @@ func _UpdateSelectedItem(itemSlot):
 func _ready() -> void:
 	print(str(inventory))
 
+func _buyItem(itemId):
+	if(money >= Items.items[itemId].price):
+		money -= Items.items[itemId].price
+		_addItem(itemId)
+
 func _addItem(itemId):
 	#use a for int i loop to go through and find the next open slot
 	#maybe start at 6?

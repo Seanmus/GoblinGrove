@@ -471,6 +471,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="InventoryGrid" type="GridContainer" parent="UI/Inventory" unique_id=798075580]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

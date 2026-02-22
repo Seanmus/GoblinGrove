@@ -7,6 +7,23 @@ const herringPlant = preload("res://Player/herring.tscn")
 func _ready() -> void:
 	FarmController._SetupFarmLand(self)
 	FarmController.newDay.connect(_NewDay)
+	_LoadPlants()
+	_LoadFarmland()
+
+#remove duplicated code with new day later
+func _LoadPlants():
+	_DeleteAllPlants()
+	var tiles = get_used_cells()
+	for tile in tiles:
+		var tileType = get_cell_atlas_coords(tile)
+		if tileType == Vector2i(0,2) || tileType == Vector2i(1,2):
+			var farmdata = FarmController.farmland[tile]
+			var tile_pos = Vector2(0,0)				
+			set_cell(tile, 0, Vector2(0,2))
+			if(farmdata.plantIndex != 0):
+				print("regrowing")
+				_Plant(farmdata.plantIndex, map_to_local(tile), farmdata.stage, tile)
+
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug"):
@@ -81,9 +98,7 @@ func _NewDay():
 		if tileType == Vector2i(0,2) || tileType == Vector2i(1,2):
 			var farmdata = FarmController.farmland[tile]
 			var tile_pos = Vector2(0,0)
-			if farmdata.watered == true:
-				farmdata.watered = false
-				farmdata.stage += 1
+
 				#Grow Plant
 					
 			set_cell(tile, 0, Vector2(0,2))

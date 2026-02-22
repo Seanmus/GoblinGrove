@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bdxw656xehsxj"]
+
+[ext_resource type="PackedScene" uid="uid://cu4o0x3nytafe" path="res://Player/SalesCounter.tscn" id="1_tnfit"]
+
+[node name="SalesCounter" unique_id=191746546 instance=ExtResource("1_tnfit")]
+sales_good = 2

@@ -24,16 +24,28 @@ class FarmData:
 
 func _process(delta: float) -> void:
 	timer += delta
-	if timer >= 0.01:
-		timer -= 0.01
+	if timer >= 0.5:
+		timer -= 0.5
 		minute += 1
-	if minute >= 10:
+	if minute >= 60:
 		hour += 1
 		minute = 0
 	if hour >= 24:
-		hour = 0
-		days += 1
-		newDay.emit()
+		_NewDay()
+
+func _NewDay():
+	timer = 0
+	minute = 0
+	hour = 6
+	days += 1
+	
+	for farmdataKeys in farmland:
+		var farmdata = farmland[farmdataKeys]
+		if farmdata.watered == true:
+			farmdata.watered = false
+			farmdata.stage += 1
+	newDay.emit()
+
 
 func _SetupFarmLand(soilLayer):
 	tileMap = soilLayer

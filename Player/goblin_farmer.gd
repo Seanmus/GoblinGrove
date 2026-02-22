@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name player
 
 var animation_speed = 3
 var moving = false
@@ -9,6 +10,8 @@ var holdTimer = 0
 @export var ray: RayCast2D
 @export var soilLayer : TileMapLayer
 @export var ui : Control
+
+
 
 func _physics_process(delta: float) -> void:
 	_SelectedItem()
@@ -41,11 +44,8 @@ func _physics_process(delta: float) -> void:
 			$AnimationTree.set("parameters/4/blend_position", last_input)
 
 func _UseItems():
-	var tile_pos = soilLayer.local_to_map(Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16))
-	var tileType = soilLayer.get_cell_atlas_coords(tile_pos)
+
 	if Input.is_action_just_pressed("click"):
-		if(soilLayer._can_harvest(tile_pos)):
-			return
 		if($LookRaycast.is_colliding()):
 			var detected = $LookRaycast.get_collider()
 			if detected is ShippingContainer:
@@ -53,8 +53,18 @@ func _UseItems():
 					return
 				if Inventory.inventory[Inventory.selectedItem].item.type == 2:
 					Inventory._sellItem(Inventory.selectedItem)
-				
-				
+			elif  detected is sales_counter:
+				Inventory._buyItem(detected.sales_good)
+			elif detected is bed:
+				FarmController._NewDay()
+			print(detected)	
+	if !soilLayer:
+		return
+	var tile_pos = soilLayer.local_to_map(Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16))
+	var tileType = soilLayer.get_cell_atlas_coords(tile_pos)	
+	if Input.is_action_just_pressed("click"):
+		if(soilLayer && soilLayer._can_harvest(tile_pos)):
+			return	
 	if (tileType == Vector2i(0,2) || tileType == Vector2i(1,2)) && Input.is_action_just_pressed("click"):
 		if !Inventory.inventory.has(Inventory.selectedItem):
 			return

@@ -1,0 +1,83 @@
+[gd_scene format=4 uid="uid://nfihqrskw0bt"]
+
+[ext_resource type="Script" uid="uid://bs4jt4smpts7c" path="res://title_screen.gd" id="1_05l2w"]
+[ext_resource type="Texture2D" uid="uid://lcqp3iy8buu5" path="res://Sprites/GroundTileSet.png" id="1_ak2if"]
+[ext_resource type="Texture2D" uid="uid://4f4x2irl1gex" path="res://Sprites/GoblinBase-Sheet.png" id="2_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://dp5lcdftdv0nv" path="res://Sprites/shippingContainer.png" id="3_05l2w"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05l2w"]
+texture = ExtResource("1_ak2if")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hafda"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_05l2w")
+
+[node name="TitleScreen" type="Node2D" unique_id=184618267]
+script = ExtResource("1_05l2w")
+
+[node name="GroundLayer" type="TileMapLayer" parent="." unique_id=1349913046]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAJAAEAAAACAAAAAAAJAAIAAAACAAAAAAAJAAMAAAACAAAAAAAJAAQAAAACAAAAAAAJAAUAAAACAAAAAAAJAAYAAAACAAAAAAAJAAcAAAACAAAAAAAJAAgAAAACAAAAAAAIAAgAAAACAAAAAAAHAAgAAAACAAAAAAAGAAgAAAACAAAAAAAFAAgAAAACAAAAAAAEAAgAAAACAAAAAAADAAgAAAACAAAAAAACAAgAAAACAAAAAAABAAgAAAACAAAAAAAAAAgAAAACAAAAAAAAAAcAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAFAAEAAAACAAEAAAAGAAEAAAACAAEAAAAHAAEAAAACAAEAAAAIAAEAAAACAAEAAAAHAAIAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAMAAAACAAEAAAAIAAMAAAACAAEAAAAIAAIAAAACAAEAAAAIAAQAAAACAAEAAAAIAAUAAAACAAEAAAAIAAYAAAACAAEAAAAHAAcAAAAAAAEAAAAIAAcAAAAAAAEAAAAGAAcAAAAAAAEAAAAFAAcAAAAAAAEAAAAEAAcAAAAAAAEAAAADAAcAAAAAAAEAAAACAAcAAAAAAAEAAAABAAcAAAAAAAEAAAABAAYAAAACAAEAAAABAAUAAAACAAEAAAABAAQAAAACAAEAAAABAAMAAAACAAEAAAABAAIAAAACAAEAAAACAAIAAAAAAAEAAAADAAIAAAAAAAEAAAAEAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAAFAAMAAAACAAEAAAAEAAMAAAACAAEAAAADAAMAAAACAAEAAAACAAQAAAACAAEAAAACAAUAAAAAAAEAAAADAAUAAAACAAEAAAADAAQAAAACAAEAAAACAAMAAAACAAEAAAADAAYAAAACAAEAAAACAAYAAAACAAEAAAAEAAYAAAACAAEAAAAFAAYAAAACAAEAAAAGAAYAAAACAAEAAAAHAAYAAAACAAEAAAAHAAUAAAAAAAEAAAAGAAQAAAACAAEAAAAEAAQAAAACAAEAAAAFAAQAAAACAAEAAAAEAAUAAAACAAEAAAAFAAUAAAACAAEAAAAGAAUAAAACAAEAAAAGAAMAAAACAAEAAAAHAAQAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_hafda")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060711566]
+texture_filter = 1
+position = Vector2(41, 91)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ig5kc")
+hframes = 12
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1405904507]
+texture_filter = 1
+position = Vector2(124, 92)
+scale = Vector2(2, 2)
+texture = ExtResource("3_05l2w")
+
+[node name="Control" type="Control" parent="." unique_id=75966845]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1268030219]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 71.0
+offset_right = 160.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.05882353, 0.21960784, 0.05882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "Press Space To Begin"
+
+[node name="Label2" type="Label" parent="Control" unique_id=1045547209]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -13.0
+offset_right = 167.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.05882353, 0.21960784, 0.05882353, 1)
+theme_override_font_sizes/font_size = 16
+text = "Goblin Grove"

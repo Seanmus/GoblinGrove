@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GoblinFarm"
-run/main_scene="uid://da7hm3frbsd7g"
+run/main_scene="uid://nfihqrskw0bt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
