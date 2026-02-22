@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b15w321i0q1q5" path="res://Player/goblin_farmer.gd" id="1_lsnek"]
 [ext_resource type="Texture2D" uid="uid://4f4x2irl1gex" path="res://Sprites/GoblinBase-Sheet.png" id="1_wmk15"]
+[ext_resource type="Texture2D" uid="uid://dt4jv8rexkem1" path="res://Sprites/UI/UIPanelHighLight.png" id="3_8n7w7"]
 [ext_resource type="Texture2D" uid="uid://kankf1f4y8d3" path="res://Sprites/UI/UIPanel.png" id="3_cbpdx"]
+[ext_resource type="Script" uid="uid://dk6qkttod1a20" path="res://Player/ui.gd" id="3_xcj76"]
 [ext_resource type="Texture2D" uid="uid://c7nxarwv5hpp0" path="res://Sprites/UI/vinegar_can.png" id="4_t4f7b"]
 [ext_resource type="Texture2D" uid="uid://gmumn8lhb4vk" path="res://Sprites/UI/hoe.png" id="5_spry5"]
 [ext_resource type="Texture2D" uid="uid://yr32xn24xadi" path="res://Sprites/UI/Onion.png" id="6_353ia"]
@@ -246,20 +248,24 @@ parameters/4/blend_position = Vector2(0, 0)
 
 [node name="Timer" type="Timer" parent="." unique_id=1468372942]
 
-[node name="UI" type="Control" parent="." unique_id=1540114707]
+[node name="UI" type="Control" parent="." unique_id=1540114707 node_paths=PackedStringArray("indicator", "indicatorBack")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -80.0
 offset_top = -72.0
 offset_right = 80.0
 offset_bottom = 72.0
+script = ExtResource("3_xcj76")
+indicator = NodePath("Indicator")
+indicatorBack = NodePath("Indicator2")
 
 [node name="ItemBar" type="HBoxContainer" parent="UI" unique_id=590021419]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.7777778
-anchor_right = 1.0
+anchor_right = 0.65
 anchor_bottom = 0.8680556
+offset_right = 56.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -269,7 +275,7 @@ metadata/_edit_use_anchors_ = true
 [node name="ItemBox" type="TextureRect" parent="UI/ItemBar" unique_id=955241939]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("3_cbpdx")
+texture = ExtResource("3_8n7w7")
 expand_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/ItemBar/ItemBox" unique_id=509817778]

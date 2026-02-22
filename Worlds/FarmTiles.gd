@@ -33,17 +33,24 @@ func _WaterTile(tile_pos):
 	set_cell(tile_pos, 0, Vector2(1,2))
 	FarmController.farmland[tile_pos].watered = true
 
-func _Plant(plantType, tile_pos, stage, farm_pos):
+func _CanPlantTile(farm_pos):
 	var farmland = FarmController.farmland[farm_pos]
 	if farmland.plant == 0:
-		farmland.plant = plantType
-		farmland.stage = stage
-		print("adding onion")
-		var newOnion = onion.instantiate()
-		plantParent.add_child(newOnion)
-		newOnion.position = tile_pos
-		newOnion._set_stage(stage)
+		print("can plant")
+		return true
+	else:
+		print("no plant allowed")
+		return false
 
+func _Plant(plantType, tile_pos, stage, farm_pos):
+	var farmland = FarmController.farmland[farm_pos]
+	farmland.plant = plantType
+	farmland.stage = stage
+	print("adding onion")
+	var newOnion = onion.instantiate()
+	plantParent.add_child(newOnion)
+	newOnion.position = tile_pos
+	newOnion._set_stage(stage)
 	
 func _NewDay():
 	_DeleteAllPlants()

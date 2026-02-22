@@ -36,7 +36,8 @@ func _physics_process(delta: float) -> void:
 			$AnimationTree.set("parameters/4/blend_position", last_input)
 			if (tileType == Vector2i(0,2) || tileType == Vector2i(1,2)) and Input.is_action_just_pressed("Plant"):
 				print("planting")
-				soilLayer._Plant(1, Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16), 1, tile_pos)
+				if soilLayer._CanPlantTile(tile_pos):
+					soilLayer._Plant(1, Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16), 1, tile_pos)
 
 func _move(input_dir):
 	ray.target_position = input_dir * tile_size
