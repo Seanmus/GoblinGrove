@@ -5,7 +5,6 @@ var moving = false
 var tile_size = 16
 var last_input = Vector2(0,0)
 var holdTimer = 0
-var itemSelected = 1
 
 @export var ray: RayCast2D
 @export var soilLayer : TileMapLayer
@@ -41,32 +40,32 @@ func _UseItems():
 	var tile_pos = soilLayer.local_to_map(Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16))
 	var tileType = soilLayer.get_cell_atlas_coords(tile_pos)
 	if (tileType == Vector2i(0,2) || tileType == Vector2i(1,2)) && Input.is_action_just_pressed("click"):
-		if !Inventory.inventory.has(itemSelected):
+		if !Inventory.inventory.has(Inventory.selectedItem):
 			return
-		if Inventory.inventory[itemSelected].item.itemId == 5:
+		if Inventory.inventory[Inventory.selectedItem].item.itemId == 5:
 			soilLayer._WaterTile(tile_pos)
-		elif Inventory.inventory[itemSelected].item.type == 0:
+		elif Inventory.inventory[Inventory.selectedItem].item.type == 0:
 			print("planting")
 			if soilLayer._CanPlantTile(tile_pos):
-				Inventory._useItem(itemSelected)
+				Inventory._useItem(Inventory.selectedItem)
 				soilLayer._Plant(1, Vector2(global_position.x + last_input.x * 16, global_position.y + last_input.y * 16), 1, tile_pos)
 
 func _SelectedItem():	
 	if Input.is_action_just_pressed("one"):
 		ui._HotBarHighlight(1)
-		itemSelected = 1
+		Inventory._UpdateSelectedItem(1)
 	if Input.is_action_just_pressed("two"):
 		ui._HotBarHighlight(2)
-		itemSelected = 2
+		Inventory._UpdateSelectedItem(2)
 	if Input.is_action_just_pressed("three"):
 		ui._HotBarHighlight(3)
-		itemSelected = 3
+		Inventory._UpdateSelectedItem(3)
 	if Input.is_action_just_pressed("four"):
 		ui._HotBarHighlight(4)
-		itemSelected = 4
+		Inventory._UpdateSelectedItem(4)
 	if Input.is_action_just_pressed("five"):
 		ui._HotBarHighlight(5)
-		itemSelected = 5
+		Inventory._UpdateSelectedItem(5)
 			
 func _move(input_dir):
 	ray.target_position = input_dir * tile_size

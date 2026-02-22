@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ctj722tsr6e0t" path="res://Sprites/UI/TimeDial.png" id="7_spry5"]
 [ext_resource type="Script" uid="uid://bl7mce6tf7jjk" path="res://Player/indicator.gd" id="8_eivs1"]
 [ext_resource type="Script" uid="uid://1r8c8l8ifuym" path="res://Player/inventorySlot.gd" id="12_s1k3g"]
+[ext_resource type="Texture2D" uid="uid://b51s3e725hgpx" path="res://Sprites/Inventory Description.png" id="13_yeau6"]
+[ext_resource type="Script" uid="uid://dp2ln8spqbvhx" path="res://Player/InventoryLabel.gd" id="14_q2a2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnek"]
 size = Vector2(16, 16)
@@ -460,29 +462,34 @@ theme_override_font_sizes/font_size = 8
 text = "11:10 AM"
 metadata/_edit_use_anchors_ = true
 
-[node name="Inventory" type="GridContainer" parent="UI" unique_id=798075580]
+[node name="Inventory" type="Control" parent="UI" unique_id=1722004500]
 visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryGrid" type="GridContainer" parent="UI/Inventory" unique_id=798075580]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -49.0
-offset_right = 58.0
-offset_bottom = -13.0
+offset_left = 2.0
+offset_top = -7.0
+offset_right = 118.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 6
 
-[node name="Slot6" type="TextureButton" parent="UI/Inventory" unique_id=2063630405]
+[node name="Slot6" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=2063630405]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 6
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot6" unique_id=84763508]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot6" unique_id=84763508]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -491,7 +498,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot6/icon" unique_id=1263484700]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot6/icon" unique_id=1263484700]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -505,13 +512,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot7" type="TextureButton" parent="UI/Inventory" unique_id=586385803]
+[node name="Slot7" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=586385803]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 7
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot7" unique_id=1469810709]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot7" unique_id=1469810709]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -520,7 +527,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot7/icon" unique_id=2135190596]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot7/icon" unique_id=2135190596]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -534,13 +541,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot8" type="TextureButton" parent="UI/Inventory" unique_id=1938112909]
+[node name="Slot8" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=1938112909]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 8
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot8" unique_id=431374825]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot8" unique_id=431374825]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -549,7 +556,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot8/icon" unique_id=788572054]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot8/icon" unique_id=788572054]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -563,13 +570,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot9" type="TextureButton" parent="UI/Inventory" unique_id=426574995]
+[node name="Slot9" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=426574995]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 9
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot9" unique_id=10669448]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot9" unique_id=10669448]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -578,7 +585,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot9/icon" unique_id=1941384172]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot9/icon" unique_id=1941384172]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -592,13 +599,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot10" type="TextureButton" parent="UI/Inventory" unique_id=457083401]
+[node name="Slot10" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=457083401]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 10
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot10" unique_id=1265874707]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot10" unique_id=1265874707]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -607,7 +614,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot10/icon" unique_id=2087098301]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot10/icon" unique_id=2087098301]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -621,13 +628,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot11" type="TextureButton" parent="UI/Inventory" unique_id=525123942]
+[node name="Slot11" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=525123942]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 11
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot11" unique_id=1547232977]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot11" unique_id=1547232977]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -636,7 +643,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot11/icon" unique_id=29798232]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot11/icon" unique_id=29798232]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -650,13 +657,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot12" type="TextureButton" parent="UI/Inventory" unique_id=534523444]
+[node name="Slot12" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=534523444]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 12
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot12" unique_id=557634091]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot12" unique_id=557634091]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -665,7 +672,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot12/icon" unique_id=1692681524]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot12/icon" unique_id=1692681524]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -679,13 +686,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot13" type="TextureButton" parent="UI/Inventory" unique_id=2098834586]
+[node name="Slot13" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=2098834586]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 13
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot13" unique_id=495428751]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot13" unique_id=495428751]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -694,7 +701,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot13/icon" unique_id=404932146]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot13/icon" unique_id=404932146]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -708,13 +715,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot14" type="TextureButton" parent="UI/Inventory" unique_id=229475392]
+[node name="Slot14" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=229475392]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 14
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot14" unique_id=345033241]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot14" unique_id=345033241]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -723,7 +730,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot14/icon" unique_id=208566140]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot14/icon" unique_id=208566140]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -737,13 +744,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot15" type="TextureButton" parent="UI/Inventory" unique_id=1914188512]
+[node name="Slot15" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=1914188512]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 15
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot15" unique_id=764201828]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot15" unique_id=764201828]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -752,7 +759,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot15/icon" unique_id=1066099683]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot15/icon" unique_id=1066099683]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -766,13 +773,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot16" type="TextureButton" parent="UI/Inventory" unique_id=1254253465]
+[node name="Slot16" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=1254253465]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 16
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot16" unique_id=2023686372]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot16" unique_id=2023686372]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -781,7 +788,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot16/icon" unique_id=1825780783]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot16/icon" unique_id=1825780783]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -795,13 +802,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot17" type="TextureButton" parent="UI/Inventory" unique_id=307620433]
+[node name="Slot17" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=307620433]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 17
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot17" unique_id=294034030]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot17" unique_id=294034030]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -810,7 +817,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot17/icon" unique_id=646768839]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot17/icon" unique_id=646768839]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -824,13 +831,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot18" type="TextureButton" parent="UI/Inventory" unique_id=2021222793]
+[node name="Slot18" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=2021222793]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 18
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot18" unique_id=646874260]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot18" unique_id=646874260]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -839,7 +846,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot18/icon" unique_id=1331798295]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot18/icon" unique_id=1331798295]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -853,13 +860,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot19" type="TextureButton" parent="UI/Inventory" unique_id=1385795717]
+[node name="Slot19" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=1385795717]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 19
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot19" unique_id=458279745]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot19" unique_id=458279745]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -868,7 +875,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot19/icon" unique_id=790595623]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot19/icon" unique_id=790595623]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -882,13 +889,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot20" type="TextureButton" parent="UI/Inventory" unique_id=434466138]
+[node name="Slot20" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=434466138]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 20
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot20" unique_id=2144764969]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot20" unique_id=2144764969]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -897,7 +904,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot20/icon" unique_id=552279584]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot20/icon" unique_id=552279584]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -911,13 +918,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot21" type="TextureButton" parent="UI/Inventory" unique_id=726969429]
+[node name="Slot21" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=726969429]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 21
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot21" unique_id=1083789472]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot21" unique_id=1083789472]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -926,7 +933,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot21/icon" unique_id=1109324307]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot21/icon" unique_id=1109324307]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -940,13 +947,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot22" type="TextureButton" parent="UI/Inventory" unique_id=1120075420]
+[node name="Slot22" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=1120075420]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 22
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot22" unique_id=1109030895]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot22" unique_id=1109030895]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -955,7 +962,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot22/icon" unique_id=1214781024]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot22/icon" unique_id=1214781024]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -969,13 +976,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slot23" type="TextureButton" parent="UI/Inventory" unique_id=1297457411]
+[node name="Slot23" type="TextureButton" parent="UI/Inventory/InventoryGrid" unique_id=1297457411]
 layout_mode = 2
 texture_normal = ExtResource("3_cbpdx")
 script = ExtResource("12_s1k3g")
 slotNumber = 23
 
-[node name="icon" type="TextureRect" parent="UI/Inventory/Slot23" unique_id=1991633349]
+[node name="icon" type="TextureRect" parent="UI/Inventory/InventoryGrid/Slot23" unique_id=1991633349]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -984,7 +991,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Inventory/Slot23/icon" unique_id=135487422]
+[node name="Label" type="Label" parent="UI/Inventory/InventoryGrid/Slot23/icon" unique_id=135487422]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -996,4 +1003,35 @@ theme_override_font_sizes/font_size = 8
 text = "22"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InventoryDescription" type="TextureRect" parent="UI/Inventory" unique_id=1897155959]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = 54.0
+offset_right = 116.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_yeau6")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="UI/Inventory/InventoryDescription" unique_id=521382976]
+texture_filter = 1
+layout_mode = 0
+anchor_left = 0.035714287
+anchor_top = 0.0625
+anchor_right = 0.97321427
+anchor_bottom = 0.90625
+theme_override_colors/font_color = Color(0.05882353, 0.21960784, 0.05882353, 1)
+theme_override_font_sizes/font_size = 8
+text = "Desc:
+Value:"
+vertical_alignment = 1
+script = ExtResource("14_q2a2v")
 metadata/_edit_use_anchors_ = true

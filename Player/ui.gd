@@ -1,6 +1,6 @@
 extends Control
 
-var inventoryOpen = false
+var inventoryOpen = true
 @export var indicator : Control
 @export var indicatorBack : Control
 @export var inventory : Control

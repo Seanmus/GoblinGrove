@@ -3,6 +3,8 @@ extends Node
 @onready var inventory = {1 : inventorySlot.new(Items.items[5], 1), 2 : inventorySlot.new(Items.items[2], 5)}
 
 signal inventoryUpdated
+var selectedItem = 1
+
 
 class inventorySlot:
 	var item
@@ -11,6 +13,10 @@ class inventorySlot:
 	func _init(_item, _count) -> void:
 		item = _item
 		count = _count
+
+func _UpdateSelectedItem(itemSlot):
+	selectedItem = itemSlot
+	emit_signal("inventoryUpdated")
 
 func _ready() -> void:
 	print(str(inventory))
