@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5imjwdrmnwrm"]
+
+[ext_resource type="Script" uid="uid://6q8p4jciudch" path="res://Player/inventory.gd" id="1_pohso"]
+
+[node name="Inventory" type="Node" unique_id=547356370 groups=["Persist"]]
+script = ExtResource("1_pohso")
