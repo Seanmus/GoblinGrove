@@ -16,14 +16,14 @@ func _set_stage(Stage):
 func _set_sprite_for_stage(stage):
 	print("setting sprite" + " stage" + str(stage))
 	if stage == 1:
-		$PlantSprite.texture = onion1
+		newStage.emit(onion1)
 	elif stage == 2:
-		$PlantSprite.texture = onion2
+		newStage.emit(onion2)
 	elif stage == 3:
-		$PlantSprite.texture = onion3
+		newStage.emit(onion3)
 	elif stage == 4:
-		$PlantSprite.texture = onion4
+		newStage.emit(onion4)
 	elif stage >= 5:
-		$PlantSprite.texture = onion5
+		newStage.emit(onion5)
 	else:
-		$PlantSprite.texture = onion1
+		newStage.emit(onion1)

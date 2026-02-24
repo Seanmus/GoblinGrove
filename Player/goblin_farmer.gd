@@ -57,6 +57,7 @@ func _UseItems():
 				Inventory._buyItem(detected.sales_good)
 			elif detected is bed:
 				FarmController._NewDay()
+				SaveLoad._save()
 			print(detected)	
 	if !soilLayer:
 		return

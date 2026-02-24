@@ -6,9 +6,10 @@ const herringPlant = preload("res://Player/herring.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	FarmController._SetupFarmLand(self)
+	print(str(FarmController.farmland))
 	FarmController.newDay.connect(_NewDay)
-	_LoadPlants()
-	_LoadFarmland()
+	#_LoadPlants()
+	#_LoadFarmland()
 
 #remove duplicated code with new day later
 func _LoadPlants():
@@ -16,10 +17,11 @@ func _LoadPlants():
 	var tiles = get_used_cells()
 	for tile in tiles:
 		var tileType = get_cell_atlas_coords(tile)
-		if tileType == Vector2i(0,2) || tileType == Vector2i(1,2):
+		if (tileType == Vector2i(0,2) || tileType == Vector2i(1,2)) && FarmController.farmland.has(tile):
 			var farmdata = FarmController.farmland[tile]
 			var tile_pos = Vector2(0,0)				
 			set_cell(tile, 0, Vector2(0,2))
+			print(farmdata)
 			if(farmdata.plantIndex != 0):
 				print("regrowing")
 				_Plant(farmdata.plantIndex, map_to_local(tile), farmdata.stage, tile)

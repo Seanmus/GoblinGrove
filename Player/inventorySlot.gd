@@ -11,9 +11,9 @@ func _ready() -> void:
 		
 func _RefreshDisplay():
 	if(Inventory.inventory.has(slotNumber)):
+		print(str(Inventory.inventory))
 		if Inventory.inventory[slotNumber].item.type != 1:
-			icon.texture = Inventory.inventory[slotNumber].item.texture
-			print(str(Inventory.inventory[slotNumber].item.texture))
+			icon.texture = load(Inventory.inventory[slotNumber].item.texture)
 			label.text = str(Inventory.inventory[slotNumber].count)
 		else:
 			label.text = ""

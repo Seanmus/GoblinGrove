@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Items="*uid://bdr2ltowkad7q"
 FarmController="*uid://ddoerlrcw3mc2"
 Inventory="*uid://5imjwdrmnwrm"
+SaveLoad="*uid://d1t4lrlw5t04p"
 
 [display]
 

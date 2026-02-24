@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6ceptmslmlo6" path="res://Player/Plant.gd" id="1_xyaem"]
 [ext_resource type="Texture2D" uid="uid://2sgnkfn2qvhp" path="res://Sprites/Plants/Onion/onion_1.png" id="2_vckr8"]
+[ext_resource type="Script" uid="uid://coyt4qm43ajpn" path="res://Player/plant_sprite.gd" id="3_owwtq"]
 
 [node name="Plant" type="Node2D" unique_id=1398079512]
 script = ExtResource("1_xyaem")
@@ -9,3 +10,6 @@ script = ExtResource("1_xyaem")
 [node name="PlantSprite" type="Sprite2D" parent="." unique_id=641364162]
 texture_filter = 1
 texture = ExtResource("2_vckr8")
+script = ExtResource("3_owwtq")
+
+[connection signal="newStage" from="." to="PlantSprite" method="_on_plant_new_stage"]

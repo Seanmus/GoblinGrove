@@ -1,11 +1,11 @@
-extends Node2D
+extends Resource
 class_name Plant
 
-var itemId
-var maxState = 5
-var tilePos = 1
-var stage = 1
-
+@export var itemId = 1
+@export var maxState = 5
+@export var tilePos = 1
+@export var stage = 1
+signal newStage(sprite)
 
 func _set_stage(Stage):
 	stage = Stage

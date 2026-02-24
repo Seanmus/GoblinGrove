@@ -16,12 +16,12 @@ func _set_stage(Stage):
 func _set_sprite_for_stage(stage):
 	print("setting sprite" + " stage" + str(stage))
 	if stage == 1:
-		$PlantSprite.texture = herring1
+		newStage.emit(herring1)
 	elif stage == 2:
-		$PlantSprite.texture = herring2
+		newStage.emit(herring2)
 	elif stage == 3:
-		$PlantSprite.texture = herring3
+		newStage.emit(herring3)
 	elif stage >= 4:
-		$PlantSprite.texture = herring4
+		newStage.emit(herring4)
 	else:
-		$PlantSprite.texture = herring1
+		newStage.emit(herring1)

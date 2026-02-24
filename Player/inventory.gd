@@ -1,19 +1,13 @@
 extends Node
 #initalize inventory with 5 seeds
- 
-var inventory = {1 : inventorySlot.new(Items.items[5], 1), 2 : inventorySlot.new(Items.items[2], 5)}
+class_name Inventory_Class
+@export var inventory = {}
 
 signal inventoryUpdated
 var selectedItem = 1
 var money = 0
 
-class inventorySlot:
-	var item
-	var count
-	
-	func _init(_item, _count) -> void:
-		item = _item
-		count = _count
+
 
 func _UpdateSelectedItem(itemSlot):
 	selectedItem = itemSlot

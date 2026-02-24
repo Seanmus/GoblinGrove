@@ -10,17 +10,7 @@ var timer = 0
 signal newDay
 # Called when the node enters the scene tree for the first time.
 
-class FarmData:
-	var watered : bool
-	var plantIndex : int
-	var stage : int
-	var plantType : Plant
-	
-	func _init(_watered, _plant, _stage, _plantType):
-		watered = _watered
-		plantIndex = _plant
-		stage = _stage
-		plantType = _plantType
+
 
 func _process(delta: float) -> void:
 	timer += delta
@@ -54,5 +44,6 @@ func _SetupFarmLand(soilLayer):
 		var tileType = soilLayer.get_cell_atlas_coords(tile)
 		if tileType == Vector2i(0,2):
 			var newFarmLand = FarmData.new(false, 0, 0, null)
-			farmland.get_or_add(tile, newFarmLand)
+			if !farmland.has(tile):
+				farmland.get_or_add(tile, newFarmLand)
 			
