@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://dp2ln8spqbvhx" path="res://Player/InventoryLabel.gd" id="14_q2a2v"]
 [ext_resource type="Texture2D" uid="uid://bymiydteigvpt" path="res://Sprites/UI/MoneyPanel.png" id="15_t74k3"]
 [ext_resource type="Script" uid="uid://cy20wl1hyh0vm" path="res://Player/money_label.gd" id="16_jdw1h"]
+[ext_resource type="Texture2D" uid="uid://niy5p8mph6sj" path="res://Sprites/SleepBackground.png" id="17_p7pap"]
+[ext_resource type="Script" uid="uid://d1q3iy65fqllx" path="res://Player/sleepbackground.gd" id="18_2wul8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnek"]
 size = Vector2(16, 16)
@@ -223,6 +225,42 @@ blend_point_3/pos = Vector2(1, 0)
 blend_point_4/node = SubResource("AnimationNodeBlendSpace2D_rabws")
 blend_point_4/pos = Vector2(0, 0)
 blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_2wul8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_p7pap"]
+resource_name = "sleep"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2wul8"]
+_data = {
+&"RESET": SubResource("Animation_2wul8"),
+&"sleep": SubResource("Animation_p7pap")
+}
 
 [node name="GoblinFarmer" type="CharacterBody2D" unique_id=301776802 node_paths=PackedStringArray("ray", "ui")]
 motion_mode = 1
@@ -1057,3 +1095,34 @@ script = ExtResource("16_jdw1h")
 
 [node name="LookRaycast" type="RayCast2D" parent="." unique_id=1650949178]
 target_position = Vector2(0, 16)
+
+[node name="Sleepbackground" type="TextureRect" parent="." unique_id=1441147445]
+visible = false
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 80.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_p7pap")
+script = ExtResource("18_2wul8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Sleepbackground" unique_id=2126093788]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -11.5
+offset_right = 33.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.05882353, 0.21960784, 0.05882353, 1)
+text = "Sleeping"
+
+[node name="SleepAnim" type="AnimationPlayer" parent="Sleepbackground" unique_id=1763834490]
+libraries/ = SubResource("AnimationLibrary_2wul8")
