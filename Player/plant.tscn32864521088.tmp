@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cfgf2qgy7adne"]
+
+[ext_resource type="Script" uid="uid://dhogtximhb6yv" path="res://Player/onion.gd" id="2_owwtq"]
+[ext_resource type="Texture2D" uid="uid://2sgnkfn2qvhp" path="res://Sprites/Plants/Onion/onion_1.png" id="2_vckr8"]
+[ext_resource type="Script" uid="uid://coyt4qm43ajpn" path="res://Player/plant_sprite.gd" id="3_owwtq"]
+
+[sub_resource type="Resource" id="Resource_y78bw"]
+resource_local_to_scene = true
+script = ExtResource("2_owwtq")
+metadata/_custom_type_script = "uid://dhogtximhb6yv"
+
+[node name="Plant" type="Node2D" unique_id=1398079512]
+script = ExtResource("3_owwtq")
+plant = SubResource("Resource_y78bw")
+
+[node name="PlantSprite" type="Sprite2D" parent="." unique_id=641364162]
+texture_filter = 1
+texture = ExtResource("2_vckr8")
