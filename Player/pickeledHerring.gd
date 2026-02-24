@@ -1,5 +1,7 @@
 extends  Plant
 
+class_name pickled_herring
+
 const herring1 = preload("res://Sprites/Plants/Fish/fish_1.png")
 const herring2 = preload("res://Sprites/Plants/Fish/fish_2.png")
 const herring3 = preload("res://Sprites/Plants/Fish/fish_3.png")

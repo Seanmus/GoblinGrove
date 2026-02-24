@@ -1,5 +1,5 @@
 extends  Plant
-
+class_name Onion
 const onion1 = preload("res://Sprites/Plants/Onion/onion_1.png")
 const onion2 = preload("res://Sprites/Plants/Onion/onion_2.png")
 const onion3 = preload("res://Sprites/Plants/Onion/onion_3.png")

@@ -10,7 +10,8 @@ var timer = 0
 signal newDay
 # Called when the node enters the scene tree for the first time.
 
-
+func _ready() -> void:
+	print("Farmland data farm controller" + str(farmland))
 
 func _process(delta: float) -> void:
 	timer += delta

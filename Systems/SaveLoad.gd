@@ -8,11 +8,12 @@ func _init() -> void:
 	#Clears the save file
 	#SaveFileData = SaveDataResource.new()
 	#_save()
+	_load()
 	if !FileAccess.file_exists(SAVE_PATH):
 		_save()
+	if Inventory.inventory == {}:
+		Inventory.inventory = {1 : inventorySlot.new(Items.items[5], 1), 2 : inventorySlot.new(Items.items[2], 5)}
 		
-func _ready() -> void:
-	_load()
 
 func _save():
 	SaveFileData.day = FarmController.days
@@ -28,5 +29,5 @@ func _load():
 		SaveFileData = ResourceLoader.load(SAVE_PATH).duplicate(true)
 		FarmController.days = SaveFileData.day
 		Inventory.inventory = SaveFileData.inventory.duplicate(true)
-		#FarmController.farmland = SaveFileData.farmdata.duplicate(true)
+		FarmController.farmland = SaveFileData.farmdata.duplicate(true)
 		Inventory.money = SaveFileData.money

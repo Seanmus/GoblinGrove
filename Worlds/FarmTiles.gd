@@ -8,8 +8,8 @@ func _ready() -> void:
 	FarmController._SetupFarmLand(self)
 	print(str(FarmController.farmland))
 	FarmController.newDay.connect(_NewDay)
-	#_LoadPlants()
-	#_LoadFarmland()
+	_LoadPlants()
+	_LoadFarmland()
 
 #remove duplicated code with new day later
 func _LoadPlants():
@@ -23,7 +23,7 @@ func _LoadPlants():
 			set_cell(tile, 0, Vector2(0,2))
 			print(farmdata)
 			if(farmdata.plantIndex != 0):
-				print("regrowing")
+				print("regrowing plant index" + str(farmdata.plantIndex) )
 				_Plant(farmdata.plantIndex, map_to_local(tile), farmdata.stage, tile)
 
 
@@ -68,16 +68,17 @@ func _Plant(plantType, tile_pos, stage, farm_pos):
 	farmland.plantIndex = plantType
 	farmland.stage = stage
 	print("adding plant")
-	var newPlant
+	var newPlant = herringPlant.instantiate()
 	if(plantType == 2):
 		newPlant = onionPlant.instantiate()
 	if(plantType == 4):
 		newPlant = herringPlant.instantiate()
-	farmland.plantType = newPlant
+	print("Planting plant type: " + str(plantType) + "at tile pos " + str(tile_pos))
+	farmland.plantType = newPlant.plant
 	plantParent.add_child(newPlant)
 	newPlant.position = tile_pos
 	print(newPlant)
-	newPlant._set_stage(stage)
+	newPlant.plant._set_stage(stage)
 
 func _can_harvest(farm_pos):
 	if FarmController.farmland.has(farm_pos):
@@ -100,12 +101,11 @@ func _NewDay():
 		if tileType == Vector2i(0,2) || tileType == Vector2i(1,2):
 			var farmdata = FarmController.farmland[tile]
 			var tile_pos = Vector2(0,0)
-
-				#Grow Plant
-					
+			print(farmdata.plantIndex)
+				#Grow Plant					
 			set_cell(tile, 0, Vector2(0,2))
 			if(farmdata.plantIndex != 0):
-				print("regrowing")
+				print("regrowing plant index" + farmdata.plantIndex )
 				_Plant(farmdata.plantIndex, map_to_local(tile), farmdata.stage, tile)	
 
 func _DeleteAllPlants():
