@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://nfihqrskw0bt"]
 
-[ext_resource type="Script" uid="uid://bs4jt4smpts7c" path="res://title_screen.gd" id="1_05l2w"]
-[ext_resource type="Texture2D" uid="uid://lcqp3iy8buu5" path="res://Sprites/GroundTileSet.png" id="1_ak2if"]
-[ext_resource type="Texture2D" uid="uid://4f4x2irl1gex" path="res://Sprites/GoblinBase-Sheet.png" id="2_ig5kc"]
-[ext_resource type="Texture2D" uid="uid://dp5lcdftdv0nv" path="res://Sprites/shippingContainer.png" id="3_05l2w"]
+[ext_resource type="Script" uid="uid://bs4jt4smpts7c" path="res://Systems/GeneralScripts/title_screen.gd" id="1_c01xn"]
+[ext_resource type="Texture2D" uid="uid://lcqp3iy8buu5" path="res://Sprites/GroundTileSet.png" id="2_rdfmt"]
+[ext_resource type="Texture2D" uid="uid://4f4x2irl1gex" path="res://Sprites/GoblinBase-Sheet.png" id="3_00sjy"]
+[ext_resource type="Texture2D" uid="uid://dp5lcdftdv0nv" path="res://Sprites/shippingContainer.png" id="4_7st4o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05l2w"]
-texture = ExtResource("1_ak2if")
+texture = ExtResource("2_rdfmt")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -22,7 +22,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_05l2w")
 
 [node name="TitleScreen" type="Node2D" unique_id=184618267]
-script = ExtResource("1_05l2w")
+script = ExtResource("1_c01xn")
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=1349913046]
 texture_filter = 1
@@ -33,14 +33,14 @@ tile_set = SubResource("TileSet_hafda")
 texture_filter = 1
 position = Vector2(41, 91)
 scale = Vector2(2, 2)
-texture = ExtResource("2_ig5kc")
+texture = ExtResource("3_00sjy")
 hframes = 12
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1405904507]
 texture_filter = 1
 position = Vector2(124, 92)
 scale = Vector2(2, 2)
-texture = ExtResource("3_05l2w")
+texture = ExtResource("4_7st4o")
 
 [node name="Control" type="Control" parent="." unique_id=75966845]
 layout_mode = 3

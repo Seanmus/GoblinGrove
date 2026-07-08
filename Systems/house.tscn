@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wxl7rxv2vta1"]
 
 [ext_resource type="Texture2D" uid="uid://dyl3afd526niw" path="res://Sprites/house.png" id="1_vkdpt"]
-[ext_resource type="Script" uid="uid://dnjxxgne7yy5n" path="res://door.gd" id="2_metfq"]
+[ext_resource type="Script" uid="uid://dnjxxgne7yy5n" path="res://Systems/GeneralScripts/door.gd" id="2_metfq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u04th"]
 size = Vector2(80, 48)

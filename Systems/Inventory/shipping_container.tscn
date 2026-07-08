@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://co5kbjdv5sa4q"]
 
 [ext_resource type="Texture2D" uid="uid://dp5lcdftdv0nv" path="res://Sprites/shippingContainer.png" id="1_6ufgo"]
-[ext_resource type="Script" uid="uid://bnnyihi5vsook" path="res://shipping_container.gd" id="1_k3atx"]
+[ext_resource type="Script" uid="uid://bnnyihi5vsook" path="res://Systems/shipping_container.gd" id="1_k3atx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ufgo"]
 size = Vector2(16, 16)

@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bcjuf1k0fk8yw" path="res://Player/goblin_farmer.tscn" id="1_3xrbq"]
 [ext_resource type="Texture2D" uid="uid://lcqp3iy8buu5" path="res://Sprites/GroundTileSet.png" id="3_jbqd0"]
 [ext_resource type="Script" uid="uid://dbcfema00k5tb" path="res://Worlds/FarmTiles.gd" id="3_vn3tm"]
-[ext_resource type="PackedScene" uid="uid://co5kbjdv5sa4q" path="res://shipping_container.tscn" id="4_vn3tm"]
+[ext_resource type="PackedScene" uid="uid://co5kbjdv5sa4q" path="res://Systems/Inventory/shipping_container.tscn" id="4_vn3tm"]
 [ext_resource type="PackedScene" uid="uid://bdxw656xehsxj" path="res://Player/SalesCounterOnion.tscn" id="5_7u6cd"]
 [ext_resource type="PackedScene" uid="uid://ngpvaysr8dvg" path="res://Player/SalesCounterHerring.tscn" id="6_ypwe8"]
-[ext_resource type="PackedScene" uid="uid://wxl7rxv2vta1" path="res://house.tscn" id="7_u04th"]
+[ext_resource type="PackedScene" uid="uid://wxl7rxv2vta1" path="res://Systems/house.tscn" id="7_u04th"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vn3tm"]
 texture = ExtResource("3_jbqd0")
