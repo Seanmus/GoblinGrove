@@ -206,25 +206,34 @@ animation = &"idle_left"
 resource_name = "idle"
 blend_point_0/node = SubResource("AnimationNodeAnimation_t4f7b")
 blend_point_0/pos = Vector2(0, 1)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_spry5")
 blend_point_1/pos = Vector2(1, 0)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_353ia")
 blend_point_2/pos = Vector2(0, -1)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_eivs1")
 blend_point_3/pos = Vector2(-1, 0)
+blend_point_3/name = &"3"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_t4f7b"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_rabws")
 blend_point_0/pos = Vector2(0, 0.90000004)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_cbpdx")
 blend_point_1/pos = Vector2(0, -1)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_w7jbw")
 blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_cl37e")
 blend_point_3/pos = Vector2(1, 0)
+blend_point_3/name = &"3"
 blend_point_4/node = SubResource("AnimationNodeBlendSpace2D_rabws")
 blend_point_4/pos = Vector2(0, 0)
-blend_mode = 1
+blend_point_4/name = &"4"
 
 [sub_resource type="Animation" id="Animation_2wul8"]
 length = 0.001

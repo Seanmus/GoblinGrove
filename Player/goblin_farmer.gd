@@ -4,14 +4,15 @@ class_name player
 var animation_speed = 3
 var moving = false
 var tile_size = 16
-var last_input = Vector2(0,0)
+@onready var last_input = FarmController.facing_dir
 var holdTimer = 0
 
 @export var ray: RayCast2D
 @export var soilLayer : TileMapLayer
 @export var ui : Control
 
-
+func _ready() -> void:
+	$AnimationTree.set("parameters/blend_position", last_input)
 
 func _physics_process(delta: float) -> void:
 	_SelectedItem()
@@ -22,6 +23,7 @@ func _physics_process(delta: float) -> void:
 		holdTimer += delta
 		holdTimer = clamp(holdTimer, 0, 0.45)
 		last_input = input_dir.normalized()
+		FarmController.facing_dir = last_input
 		if(abs(input_dir.x) > abs(input_dir.y)):
 			$LookRaycast.target_position = Vector2(input_dir.x * 16, 0)
 		else:

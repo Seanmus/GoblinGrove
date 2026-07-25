@@ -6,6 +6,7 @@ var hour = 6
 var minute = 0
 var days = 0
 var timer = 0
+var facing_dir = Vector2(0,0)
 
 signal newDay
 # Called when the node enters the scene tree for the first time.
