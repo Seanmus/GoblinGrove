@@ -206,25 +206,34 @@ animation = &"idle_left"
 resource_name = "idle"
 blend_point_0/node = SubResource("AnimationNodeAnimation_t4f7b")
 blend_point_0/pos = Vector2(0, 1)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_spry5")
 blend_point_1/pos = Vector2(1, 0)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_353ia")
 blend_point_2/pos = Vector2(0, -1)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_eivs1")
 blend_point_3/pos = Vector2(-1, 0)
+blend_point_3/name = &"3"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_t4f7b"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_rabws")
 blend_point_0/pos = Vector2(0, 0.90000004)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_cbpdx")
 blend_point_1/pos = Vector2(0, -1)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_w7jbw")
 blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_cl37e")
 blend_point_3/pos = Vector2(1, 0)
+blend_point_3/name = &"3"
 blend_point_4/node = SubResource("AnimationNodeBlendSpace2D_rabws")
 blend_point_4/pos = Vector2(0, 0)
-blend_mode = 1
+blend_point_4/name = &"4"
 
 [sub_resource type="Animation" id="Animation_2wul8"]
 length = 0.001
@@ -463,9 +472,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -49.0
-offset_right = -1.0
-offset_bottom = 48.0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 39.0
+offset_bottom = 40.0
 grow_horizontal = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("7_353ia")
@@ -481,8 +491,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -48.0
-offset_bottom = 48.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 40.0
 grow_horizontal = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("7_spry5")
@@ -1080,8 +1092,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI" unique_id=1722737762]
 layout_mode = 0
-offset_right = 32.0
-offset_bottom = 16.0
+offset_left = -40.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 texture = ExtResource("15_t74k3")
 stretch_mode = 2
 
