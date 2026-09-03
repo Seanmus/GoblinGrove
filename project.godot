@@ -24,8 +24,8 @@ SaveLoad="*uid://d1t4lrlw5t04p"
 
 [display]
 
-window/size/viewport_width=240
-window/size/viewport_height=160
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/stretch/mode="viewport"
 
 [global_group]

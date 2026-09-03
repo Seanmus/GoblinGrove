@@ -8,9 +8,9 @@ enum types {
 }
 
 var onion = item.new(1,"Stinky Onion",types.crop, 100, 100, "res://Sprites/UI/Onion.png")
-var onion_seed = item.new(2,"Onion Seed", types.seed, 50, 25, "res://Sprites/Plants/Onion/onion_1.png")
+var onion_seed = item.new(2,"Onion Seed", types.seed, 50, 25, "res://Sprites/UI/OnionSeed.png")
 var herring = item.new(3,"Pickeled Herring",types.crop, 250, 200, "res://Sprites/UI/fish_icon.png")
-var herring_seed = item.new(4,"Regular Old Herring",types.seed, 50, 200, "res://Sprites/Plants/Fish/fish_1.png")
+var herring_seed = item.new(4,"Regular Old Herring",types.seed, 50, 200, "res://Sprites/UI/fish_seed.png")
 var wateringCan = item.new(5,"Vinegar Cans",types.tool, 0, 0, "res://Sprites/UI/vinegar_can.png")
 var hoe = item.new(6, "Hoe", types.tool, 0 , 0, "res://Sprites/UI/hoe.png")
 
