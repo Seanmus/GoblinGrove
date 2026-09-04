@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bcjuf1k0fk8yw"]
 
 [ext_resource type="Script" uid="uid://b15w321i0q1q5" path="res://Player/goblin_farmer.gd" id="1_lsnek"]
-[ext_resource type="Texture2D" uid="uid://4f4x2irl1gex" path="res://Sprites/GoblinBase-Sheet.png" id="1_wmk15"]
+[ext_resource type="Texture2D" uid="uid://cin6hpv8xdk5r" path="res://Sprites/GoblinSpriteSheet32Tall.png" id="2_2wul8"]
 [ext_resource type="Texture2D" uid="uid://dt4jv8rexkem1" path="res://Sprites/UI/UIPanelHighLight.png" id="3_8n7w7"]
 [ext_resource type="Texture2D" uid="uid://kankf1f4y8d3" path="res://Sprites/UI/UIPanel.png" id="3_cbpdx"]
 [ext_resource type="Script" uid="uid://dk6qkttod1a20" path="res://Player/ui.gd" id="3_xcj76"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" uid="uid://d1q3iy65fqllx" path="res://Player/sleepbackground.gd" id="18_2wul8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnek"]
-size = Vector2(16, 16)
+size = Vector2(16, 14)
 
 [sub_resource type="Animation" id="Animation_rabws"]
 resource_name = "Down"
@@ -279,11 +279,13 @@ ray = NodePath("RayCast2D")
 ui = NodePath("UI")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=38963677]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_lsnek")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1096661634]
 texture_filter = 1
-texture = ExtResource("1_wmk15")
+position = Vector2(0, -8)
+texture = ExtResource("2_2wul8")
 hframes = 12
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1801533089]
@@ -299,6 +301,7 @@ parameters/blend_position = Vector2(0, 0)
 parameters/4/blend_position = Vector2(0, 0)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=78927974]
+position = Vector2(0, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=1468372942]
 
