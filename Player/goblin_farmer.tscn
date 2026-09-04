@@ -346,9 +346,10 @@ texture = ExtResource("4_t4f7b")
 [node name="Label" type="Label" parent="UI/ItemBar/ItemBox/icon" unique_id=1682737285]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.375
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -375,9 +376,10 @@ texture = ExtResource("6_353ia")
 [node name="Label" type="Label" parent="UI/ItemBar/ItemBox2/icon" unique_id=2081075437]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.375
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -397,16 +399,17 @@ slotNumber = 3
 
 [node name="icon" type="TextureRect" parent="UI/ItemBar/ItemBox3" unique_id=1416836283]
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_right = 32.0
+offset_bottom = 33.0
 texture = ExtResource("5_spry5")
 
 [node name="Label" type="Label" parent="UI/ItemBar/ItemBox3/icon" unique_id=135602607]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.969697
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.3333334
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -426,15 +429,16 @@ slotNumber = 4
 
 [node name="icon" type="TextureRect" parent="UI/ItemBar/ItemBox4" unique_id=134525782]
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_right = 32.0
+offset_bottom = 32.0
 
 [node name="Label" type="Label" parent="UI/ItemBar/ItemBox4/icon" unique_id=2009161734]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.375
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -454,15 +458,16 @@ slotNumber = 5
 
 [node name="icon" type="TextureRect" parent="UI/ItemBar/ItemBox5" unique_id=847624871]
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_right = 32.0
+offset_bottom = 32.0
 
 [node name="Label" type="Label" parent="UI/ItemBar/ItemBox5/icon" unique_id=1619665789]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.375
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1109,7 +1114,7 @@ anchor_top = 0.0625
 anchor_right = 0.97321427
 anchor_bottom = 0.90625
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "Desc:
 Value:"
 vertical_alignment = 1
